@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+body {
+    font-family: "Titillium Web", sans-serif;
+}
+
+.font-amaranth {
+    font-family: "Amaranth",
+    sans-serif;
+}
+
+.font-title {
+    color: black;
+    font-family: "Amaranth", sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    margin-left: 5px; /* font-family: 'Titillium Web', sans-serif; */
+}
+
+.nav-link {
+    display: inline;
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover {
+    color: white;
+    transition: 0.2s all;
+}
+
+.bullet {
+    padding: 0.5rem 0.1rem;
+    background-color: #28a745;
+    visibility: hidden;
+}
+
+.current {
+    visibility: visible;
+}
+
+.current + a {
+    color: white;
+}
+
+.search-box {
+    width: 220px;
+    border-radius: 35px;
+    padding: 10px 15px;
+    padding: 12px 15px 10px 17px;
+}
+
+.search-btn {
+    color: white;
+}
+
+.fa-search {
+    font-size: 16px;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    line-height: 20px;
+}
