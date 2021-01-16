@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", [SongController::class, "index"]);
+Route::get("/song/add", [SongController::class, "addSong"]);
+Route::post("/song/add", [SongController::class, "store"]);

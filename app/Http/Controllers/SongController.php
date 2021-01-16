@@ -17,15 +17,16 @@ class SongController extends Controller
         return view("index");
     }
 
+    public function addSong()
+    {
+        return view('addSong');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -33,9 +34,18 @@ class SongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // TODO add validation
     public function store(Request $request)
     {
-        //
+        $song = new Song;
+        $song->title = $request->title;
+        $song->artist_name = $request->artist_name;
+        $song->album_name = $request->album_name;
+        $song->release_date = $request->release_date;
+        $song->lyric = $request->lyric;
+        $song->save();
+        return redirect('/');
     }
 
     /**
