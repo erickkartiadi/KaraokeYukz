@@ -15,6 +15,7 @@
 
     <div class="container-fluid vh-100">
         <div class="row h-100">
+            @section("sidebar")
             <div class="col-2 bg-dark pt-4 pb-4 pl-0 h-100">
                 <div>
                     <h1 class="text-light font-title pl-3">KaraokeYukz</h1>
@@ -26,11 +27,11 @@
                     </nav>
                 </div>
             </div>  
+            @show
             <div id="content" class="col-10 bg-light h-100 pt-4 pl-4 overflow-auto">
                 @yield("content")
             </div>
         </div>
-
     </div>
 </body>
 @yield("script")

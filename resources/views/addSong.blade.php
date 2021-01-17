@@ -13,8 +13,8 @@
     <div class="d-flex justify-content-between mb-5">
         <h1 class="display-4 font-amaranth">Add Song</h1>
     </div>
-    <form method="POST" action="/song/add">
-      @csrf
+    <form action="/song/add" method="POST">
+      {{ csrf_field() }}
       <div class="form-group">
         <label for="songTitle">Song Title</label>
         <input name="title" type="text" class="form-control" id="songTitle">

@@ -2,6 +2,7 @@
 
 @section("subtitle", "Songs")
 @section("content")
+
 <div>
     <div class="search-box bg-dark">
         <input class="search-input mr-2" type="text" name="" placeholder="Search">
@@ -27,20 +28,31 @@
                 <th scope="col">Artist</th>
                 <th scope="col">Album</th>
                 <th scope="col">Release Date</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($songs as $song)
-                <tr class="clickable-row" data-href="/{{$song->id}}">
+                <tr class="clickable-row" data-href="/song/{{$song->id}}">
                     <td>{{$song->title}}</td>
                     <td>{{$song->artist_name}}</td>
                     <td>{{$song->album_name}}</td>
                     <td>{{$song->release_date}}</td>
+                    <td>
+                        <a href="#" class="action-button-edit btn btn-success">
+                            <i class="fas fa-edit mr-1"></i>
+                            Edit
+                        </a>
+                        <a href="#" class="action-button-delete btn btn-danger">
+                            <i class="far fa-trash-alt mr-1"></i>
+                            Delete
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-</div>
+</div> 
 @stop
 
 @section("script")
@@ -48,10 +60,16 @@
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".clickable-row").forEach(element => {
             element.addEventListener("click", function () {
-                console.log(element.dataset.href);
+                window.location.href = element.dataset.href;
             });
         });
-    });
 
+        document.querySelectorAll(".action-button").forEach(element => {
+            element.addEventListener("click", function(e) {
+                e.stopPropagation();
+                console.log("child");
+            })
+        })
+    });
 </script>
 @stop
