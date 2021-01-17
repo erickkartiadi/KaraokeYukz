@@ -30,18 +30,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="clickable-row" data-href="/">
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr class="clickable-row" data-href="/2">
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+            @foreach ($songs as $song)
+                <tr class="clickable-row" data-href="/{{$song->id}}">
+                    <td>{{$song->title}}</td>
+                    <td>{{$song->artist_name}}</td>
+                    <td>{{$song->album_name}}</td>
+                    <td>{{$song->release_date}}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
