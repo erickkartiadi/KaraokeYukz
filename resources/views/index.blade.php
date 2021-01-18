@@ -1,5 +1,4 @@
 @extends("layouts.master")
-
 @section("subtitle", "Songs")
 @section("content")
 
@@ -38,15 +37,19 @@
                     <td>{{$song->artist_name}}</td>
                     <td>{{$song->album_name}}</td>
                     <td>{{$song->release_date}}</td>
-                    <td>
-                        <a href="/song/{{$song->id}}/edit" class="action-button btn btn-primary">
+                    <td class="d-flex">
+                        <a href="/song/{{$song->id}}/edit" class="action-button btn btn-primary mr-2">
                             <i class="fas fa-edit mr-1"></i>
                             Edit
                         </a>
-                        <a class="action-button-delete btn btn-danger">
-                            <i class="far fa-trash-alt mr-1"></i>
-                            Delete
-                        </a>
+                        <form action="/song/{{$song->id}}" method="POST">
+                            @method("DELETE")
+                            @csrf
+                            <button  class="action-button btn btn-danger">
+                                <i class="far fa-trash-alt mr-1"></i>
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

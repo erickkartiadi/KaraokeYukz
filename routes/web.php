@@ -21,3 +21,4 @@ Route::post("/song/add", [SongController::class, "store"]);
 Route::get("/song/{song}", [SongController::class, "show"]);
 Route::get("/song/{song}/edit", [SongController::class, "edit"]);
 Route::put("/song/{song}", [SongController::class, "update"]);
+Route::delete("/song/{song}", [SongController::class, "destroy"]);
