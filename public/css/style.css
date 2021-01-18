@@ -53,6 +53,15 @@ body {
 
 .search-btn {
     color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.search-btn:focus{
+    color: rgba(255, 255, 255, 0.5);
+    outline: none;
 }
 
 .fa-search {

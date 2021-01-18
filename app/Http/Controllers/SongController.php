@@ -14,9 +14,15 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $songs = Song::all();
+
+        if ($request->has('s')) {
+            $songs = Song::where('title', 'LIKE', "%{$request->input('s')}%")->get();
+        } else {
+            $songs = Song::all();
+        }
+
         return view("index")
             ->with("songs", $songs->sortByDesc('updated_at'));
     }

@@ -4,10 +4,12 @@
 
 <div>
     <div class="search-box bg-dark">
-        <input class="search-input mr-2" type="text" name="" placeholder="Search">
-        <a href="#" class="search-btn">
-            <i class="fas fa-search"></i>
-        </a>
+        <form action="/" method="GET">
+            <input class="search-input mr-2" type="text" name="s" placeholder="Search by title">
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     </div>
 </div>
 <div class="mt-5">
