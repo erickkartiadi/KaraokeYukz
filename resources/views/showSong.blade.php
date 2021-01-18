@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('subtitle', "title")
+@section('subtitle', $song->title)
 
 @section("sidebar")
 <div class="col-2 bg-dark pt-4 pb-4 pl-0 h-100">

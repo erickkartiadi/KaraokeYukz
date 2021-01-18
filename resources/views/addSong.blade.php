@@ -1,15 +1,8 @@
 @extends("layouts.master")
 @section("subtitle", "Add Song")
 @section("content")
-<div>
-    <div class="search-box bg-dark">
-        <input class="search-input mr-2" type="text" name="" placeholder="Search">
-        <a href="#" class="search-btn">
-            <i class="fas fa-search"></i>
-        </a>
-    </div>
-</div>
-<div class="mt-5">
+
+<div class="mt-2">
     <div class="d-flex justify-content-between mb-5">
         <h1 class="display-4 font-amaranth">Add Song</h1>
     </div>

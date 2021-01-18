@@ -39,11 +39,11 @@
                     <td>{{$song->album_name}}</td>
                     <td>{{$song->release_date}}</td>
                     <td>
-                        <a href="#" class="action-button-edit btn btn-success">
+                        <a href="/song/{{$song->id}}/edit" class="action-button btn btn-primary">
                             <i class="fas fa-edit mr-1"></i>
                             Edit
                         </a>
-                        <a href="#" class="action-button-delete btn btn-danger">
+                        <a class="action-button-delete btn btn-danger">
                             <i class="far fa-trash-alt mr-1"></i>
                             Delete
                         </a>
@@ -67,7 +67,6 @@
         document.querySelectorAll(".action-button").forEach(element => {
             element.addEventListener("click", function(e) {
                 e.stopPropagation();
-                console.log("child");
             })
         })
     });

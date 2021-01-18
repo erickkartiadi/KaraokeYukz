@@ -40,7 +40,6 @@ class SongController extends Controller
     // TODO add validation
     public function store(Request $request)
     {
-        return "test";
         $song = new Song;
         $song->title = $request->title;
         $song->artist_name = $request->artist_name;
@@ -70,7 +69,7 @@ class SongController extends Controller
      */
     public function edit(Song $song)
     {
-        //
+        return view("editSong")->with("song", $song);
     }
 
     /**
@@ -82,7 +81,13 @@ class SongController extends Controller
      */
     public function update(Request $request, Song $song)
     {
-        //
+        $song->title = $request->title;
+        $song->artist_name = $request->artist_name;
+        $song->album_name = $request->album_name;
+        $song->release_date = $request->release_date;
+        $song->lyric = $request->lyric;
+        $song->update();
+        return redirect("/");
     }
 
     /**
