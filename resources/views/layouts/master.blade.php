@@ -16,7 +16,7 @@
     <div class="container-fluid vh-100">
         <div class="row h-100">
             @section("sidebar")
-            <div class="col-2 bg-dark pt-4 pb-4 pl-0 h-100">
+            <div class="col-lg-2 bg-dark pt-4 pb-4 pl-0 h-100">
                 <div>
                     <a href="/" class="h1 text-light font-title pl-3">KaraokeYukz</a>
                     <nav class="nav flex-column pt-2">
@@ -28,7 +28,7 @@
                 </div>
             </div>  
             @show
-            <div id="content" class="col-10 bg-light h-100 pt-4 pl-4 overflow-auto">
+            <div id="content" class= "col-lg-10 bg-light h-100 pt-4 pl-4 overflow-auto">
                 @yield("content")
             </div>
         </div>
