@@ -18,7 +18,7 @@ class SongController extends Controller
     {
         $songs = Song::all();
         return view("index")
-            ->with("songs", $songs);
+            ->with("songs", $songs->sortByDesc('updated_at'));
     }
 
     public function addSong()
