@@ -30,7 +30,7 @@
 @section("content")
 <p class="h2 lyric">
 @php
-   echo html_entity_decode($song->lyric)
+   echo html_entity_decode(nl2br($song->lyric))
 @endphp
 </p>
 @endsection

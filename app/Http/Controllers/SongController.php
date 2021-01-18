@@ -74,7 +74,7 @@ class SongController extends Controller
         $song->artist_name = $request->artist_name;
         $song->album_name = $request->album_name;
         $song->release_date = $request->release_date;
-        $song->lyric = nl2br($request->lyric);
+        $song->lyric = $request->lyric;
         $song->save();
         return redirect()->route("home");
     }
@@ -136,7 +136,7 @@ class SongController extends Controller
         $song->artist_name = $request->artist_name;
         $song->album_name = $request->album_name;
         $song->release_date = $request->release_date;
-        $song->lyric = nl2br($request->lyric);
+        $song->lyric = $request->lyric;
         $song->update();
         return redirect("/");
     }
