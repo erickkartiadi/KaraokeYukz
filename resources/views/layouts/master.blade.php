@@ -18,7 +18,7 @@
             @section("sidebar")
             <div class="col-2 bg-dark pt-4 pb-4 pl-0 h-100">
                 <div>
-                    <h1 class="text-light font-title pl-3">KaraokeYukz</h1>
+                    <a href="/" class="h1 text-light font-title pl-3">KaraokeYukz</a>
                     <nav class="nav flex-column pt-2">
                         <div class="overflow-hidden">
                             <span class="bullet d-inline mr-3 {{Request::is("/") ? 'current' : ""}}"></span>

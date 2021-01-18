@@ -79,3 +79,9 @@ body {
 .clickable-row {
     cursor: pointer;
 }
+
+.lyric {
+    padding-left: 1rem;
+    font-size: 3rem;
+    line-height: 4.5rem;
+}

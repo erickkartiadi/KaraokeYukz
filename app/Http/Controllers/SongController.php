@@ -48,7 +48,7 @@ class SongController extends Controller
     public function store(Request $request)
     {
         $start_date = '2002-01-01';
-        $end_date = '2020-01-01';
+        $end_date = '2020-12-31';
         $rules = [
             'title' => 'required|min:5|max:20',
             'artist_name' => 'required|min:3|max:15',
@@ -74,7 +74,7 @@ class SongController extends Controller
         $song->artist_name = $request->artist_name;
         $song->album_name = $request->album_name;
         $song->release_date = $request->release_date;
-        $song->lyric = $request->lyric;
+        $song->lyric = nl2br($request->lyric);
         $song->save();
         return redirect()->route("home");
     }
@@ -111,7 +111,7 @@ class SongController extends Controller
     public function update(Request $request, Song $song)
     {
         $start_date = '2002-01-01';
-        $end_date = '2020-01-01';
+        $end_date = '2020-12-31';
         $rules = [
             'title' => 'required|min:5|max:20',
             'artist_name' => 'required|min:3|max:15',
@@ -136,7 +136,7 @@ class SongController extends Controller
         $song->artist_name = $request->artist_name;
         $song->album_name = $request->album_name;
         $song->release_date = $request->release_date;
-        $song->lyric = $request->lyric;
+        $song->lyric = nl2br($request->lyric);
         $song->update();
         return redirect("/");
     }

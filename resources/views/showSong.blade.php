@@ -6,7 +6,7 @@
 <div class="col-2 bg-dark pt-4 pb-4 pl-0 h-100">
     <div class=" h-100 d-flex flex-column justify-content-between">
         <div>
-            <h1 class="text-light font-title pl-3">KaraokeYukz</h1>
+            <a href="/" class="h1 text-light font-title pl-3">KaraokeYukz</a>
             <nav class="nav flex-column pt-2">
                 <div class="overflow-hidden">
                     <span class="bullet d-inline mr-3 {{Request::is("/") ? 'current' : ""}}"></span>
@@ -27,7 +27,10 @@
     </div>
 </div>
 @endsection
-{{-- TODO fix paragraph --}}
 @section("content")
-<h1>{{ $song->lyric }}</h1>
+<p class="h2 lyric">
+@php
+   echo html_entity_decode($song->lyric)
+@endphp
+</p>
 @endsection
