@@ -12,9 +12,25 @@ KaraokeYukz adalah sebuah website yang digunakan untuk memuat lirik lagu yang di
 
 ## Prerequisites
 
-Before you continue, ensure you have database called `KaraokeYukz`
+Before you continue, ensure you have met the following requirements:
+
+-   You have database called `KaraokeYukz`
+-   Copy the `.env.example` file, and rename it to `.env`
+-   After copy the .env file, you need to adjust the .env file with your local environment
 
 ## Installation
+
+Install required dependencies with composer.
+
+```bash
+composer install
+```
+
+Generate key for your app.
+
+```
+php artisan key:generate
+```
 
 Run `migrations` and `seeders` command.
 
