@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Song;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SongController extends Controller
 {
@@ -37,9 +39,30 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // TODO add validation
     public function store(Request $request)
     {
+        $start_date = '2002-01-01';
+        $end_date = '2020-01-01';
+        $rules = [
+            'title' => 'required|min:5|max:20',
+            'artist_name' => 'required|min:3|max:15',
+            'album_name' => 'required',
+            'release_date' =>
+            "required|date|after_or_equal:$start_date|before_or_equal:$end_date",
+            'lyric' => 'required',
+        ];
+
+        $messages = [
+            'release_date.after_or_equal' => 'The release date must be a date between 2002-2020',
+            'release_date.before_or_equal' => 'The release date must be a date between 2002-2020',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $song = new Song;
         $song->title = $request->title;
         $song->artist_name = $request->artist_name;
@@ -81,6 +104,28 @@ class SongController extends Controller
      */
     public function update(Request $request, Song $song)
     {
+        $start_date = '2002-01-01';
+        $end_date = '2020-01-01';
+        $rules = [
+            'title' => 'required|min:5|max:20',
+            'artist_name' => 'required|min:3|max:15',
+            'album_name' => 'required',
+            'release_date' =>
+            "required|date|after_or_equal:$start_date|before_or_equal:$end_date",
+            'lyric' => 'required',
+        ];
+
+        $messages = [
+            'release_date.after_or_equal' => 'The release date must be a date between 2002-2020',
+            'release_date.before_or_equal' => 'The release date must be a date between 2002-2020',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $song->title = $request->title;
         $song->artist_name = $request->artist_name;
         $song->album_name = $request->album_name;
